@@ -2,7 +2,7 @@ import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
+from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, ADMIN_ID
 from utils import Media, get_file_details
 from plugins.broadcast import broadcast
 from pyrogram.errors import UserNotParticipant
@@ -163,7 +163,7 @@ async def log_file(bot, message):
 
 @Client.on_message(filters.private & filters.command("broadcast"))
 async def broadcast_handler_open(_, m):
-    if m.from_user.id not in ADMIMS:
+    if m.from_user.id not in ADMIN_ID:
         await m.delete()
         return
     if m.reply_to_message is None:
