@@ -1,7 +1,3 @@
-import re
-import os
-from os import environ
-
 # Bot information
 SESSION = 'Media_search'
 USER_SESSION = 'User_Bot'
@@ -13,8 +9,6 @@ USERBOT_STRING_SESSION = ''
 # Bot settings
 CACHE_TIME = 300
 USE_CAPTION_FILTER = False
-BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
-ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
 
 # Admins, Channels & Users
 ADMINS = [12345789, 'admin123', 98765432]
