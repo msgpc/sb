@@ -163,7 +163,7 @@ async def log_file(bot, message):
 
 @Client.on_message(filters.private & filters.command("broadcast"))
 async def broadcast_handler_open(_, m):
-    if m.from_user.id not in ADMIN_ID:
+    if m.from_user.id not in ADMIMS:
         await m.delete()
         return
     if m.reply_to_message is None:
