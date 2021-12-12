@@ -12,6 +12,8 @@ BOT_TOKEN = environ['BOT_TOKEN']
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
+BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
+ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
