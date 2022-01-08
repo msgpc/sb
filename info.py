@@ -14,6 +14,7 @@ BOT_TOKEN = environ['BOT_TOKEN']
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
+BROADCAST_CHANNEL = int(os.environ.get("BROADCAST_CHANNEL", ""))
 BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
 DB_URL = os.environ.get("DATABASE_1", "")
 ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
